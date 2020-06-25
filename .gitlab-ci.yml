@@ -3,6 +3,8 @@
     - bundle exec danger
     - bundle exec rake
     -  if [ -z "$SKIP_BENCHMARK" ]; then bundle exec rake benchmarks; fi;
+  rules:
+  - if: '$CI_PIPELINE_SOURCE == "external_pull_request_event"'
 
 default:
   before_script:
